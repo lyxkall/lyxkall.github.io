@@ -755,19 +755,11 @@ span {
         transform: rotate(180deg) translate(-220px, -335px);
     }
 
-    .home .profession-container .overlay {
-        position: fixed;
-        top: 70rem;
-        left: 50%;
-        right: 0;
-        transform: rotate(90deg) translate(-50%, 50%) scaleY(3);
-        border-width: 23.9rem;
-    }
-    
     .home .profession-box .circle {
         position: fixed;
         width: 670px;
         height: 670px;
+        z-index: -1;
     }
 
     .home .profession-container .overlay {
@@ -799,7 +791,7 @@ span {
     }
 
     .portfolio .portfolio-container {
-        grid-template-columns: repeart(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .testimonial-container .testimonial-wrapper {
@@ -811,7 +803,7 @@ span {
     }
 
     .testimonial-box .swiper-button-next,
-    .testimonial-box .swiper-button-next {
+    .testimonial-box .swiper-button-prev {
         display: none;
     }
 }
@@ -820,4 +812,35 @@ span {
     .portfolio .portfolio-container {
         grid-template-columns: 1fr;
     }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    #darkMode-icon {
+        right: 6rem;
+    }
+
+    .home {
+        padding: 0 3% 30rem;
+    }
+
+    .home .profession-box .profession:nth-child(1) {
+        transform: rotate(-90deg) translate(-110px, -220px);
+    }
+
+    .home .profession-box .profession:nth-child(2) {
+        transform: rotate(0deg) translate(5px, -335px);
+    }
+
+    .home .profession-box .profession:nth-child(3) {
+        transform: rotate(90deg) translate(-105px, -220px);
+    }
+
+    .home .profession-box .profession:nth-child(4) {
+        transform: rotate(180deg) translate(-210px, -335px);
+    }
+
 }
