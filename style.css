@@ -19,6 +19,13 @@
     --shadow-color: rgba(0, 0, 0, .2);
 }
 
+.dark-mode {
+    --bg-color: #0b061f;
+    --text-color: #fdfdfd;
+    --main-color: #4b3398;
+    --shadow-color: rgba(0, 0, 0, .7);
+}
+
 html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -201,6 +208,25 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: professionRotate 13s ease-out infinite;
+}
+
+@keyframes professionRotate {
+    0%,20%  {
+        transform: rotate(0deg);
+    }
+    25%,45%  {
+        transform: rotate(-90deg);
+    }
+    50%,70%  {
+        transform: rotate(-180deg);
+    }
+    75%,95%  {
+        transform: rotate(-270deg);
+    }
+    100%  {
+        transform: rotate(-360deg);
+    }
 }
 
 .home .profession-box .profession {
@@ -444,7 +470,7 @@ span {
 }
 
 .testimonial-wrapper .testimonial-box {
-    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.007);
     padding: 1rem;
     border-radius: 2rem;
     overflow: hidden;
@@ -618,6 +644,17 @@ span {
 }
 
 @media (max-width: 991px) {
+
+    .navbar a:nth-child(1),
+    .navbar a:nth-child(2) {
+        color: var(--main-color);
+    }
+
+    .navbar a.active::before {
+        background: var(--main-color);
+        opacity: .7;
+    }
+
     .home .home-content {
         max-width: 50rem;
     }
@@ -843,4 +880,23 @@ span {
         transform: rotate(180deg) translate(-210px, -335px);
     }
 
+    .contact form .input-box input {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 365px) {
+    .about-img img {
+        width: 90vw;
+    }
+
+    .footer{
+        flex-direction: column-reverse;
+    }
+
+    .foote p {
+        text-align: center;
+        margin-top: 2rem;
+    }
 }
