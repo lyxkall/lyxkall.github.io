@@ -64,6 +64,7 @@ let darkModeIcon = document.querySelector('#darkMode-icon');
 darkModeIcon.onclick = () => {
     darkModeIcon.classList.toggle('bx-sun');
     document.body.classList.toggle('dark-mode');
+    
 };
 
 /*========== Scroll Reveal =========*/
@@ -78,3 +79,17 @@ ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img img, .services-container, .portfolio-box, .testimonial-wrapper, .conttact form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-img img,', { origin: 'left' });
 ScrollReveal().reveal('.home-content h3, .home-content p, .about-content,', { origin: 'right' });
+
+/*========== scroll text color =========*/
+window.addEventListener("scroll", function () {
+  let scrollTop = window.scrollY;
+  let maxScroll = document.body.scrollHeight - window.innerHeight;
+  let scrollPercent = scrollTop / maxScroll;
+  
+  let red = Math.floor(255 * scrollPercent);
+  let green = Math.floor(100 + 155 * scrollPercent);
+  let blue = Math.floor(255 - 255 * scrollPercent);
+  
+  document.getElementById("about-content").style.color = `rgb(${red}, ${green}, ${blue})`;
+});
+
